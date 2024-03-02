@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="FACULTY LEAVE MANAGEMENT SYSTEM"
+            android:text="Srec Online Xerox Automation"
             android:textSize="20sp"
             android:textColor="@color/black"
             android:layout_marginTop="10dp"
@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed-medium"
-            android:text="sign in to continue!!"
+            android:text="sign up to continue!!"
             android:textColor="@color/black"
             android:gravity="left"
             android:layout_marginLeft="0dp"
@@ -38,7 +38,6 @@
             android:layout_marginTop="30dp"
             android:padding="30dp"
             android:orientation="vertical">
-
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -75,7 +74,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:id="@+id/phone"
-                android:hint="Roll number"
+                android:hint="Phone number"
                 app:counterMaxLength="10"
                 android:textColorHint="@color/black"
                 style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"

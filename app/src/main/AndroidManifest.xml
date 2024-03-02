@@ -16,6 +16,15 @@
         android:theme="@style/Theme.Srec"
         tools:targetApi="31">
         <activity
+            android:name=".ShopHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShopkeeperRegisterationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShopkeeperLoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterUserActivity"
             android:exported="false" />
         <activity

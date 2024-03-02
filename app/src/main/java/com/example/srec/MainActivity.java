@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
         //set the upload btn disable first without selecting the pdf file
         uploadBTn.setEnabled(false);
 
-        //select the pdf file
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,8 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == 101 && resultCode == RESULT_OK && data != null && data.getData() != null){
             Uri uri =data.getData();
-
-            //we need the file name of the pdf file, so extract the name of the pdf file
             String uriString  = uri.toString();
             File myFile = new File(uriString);
             String path = myFile.getAbsolutePath();
@@ -102,10 +99,7 @@ public class MainActivity extends AppCompatActivity {
                     uploadPDF(data.getData());
                 }
             });
-
-
         }
-
     }
 
     private void uploadPDF(Uri data) {

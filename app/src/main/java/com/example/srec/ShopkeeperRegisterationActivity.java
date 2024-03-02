@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RegisterUserActivity extends AppCompatActivity {
+public class ShopkeeperRegisterationActivity extends AppCompatActivity {
 
 
     TextInputLayout regName, regEmail, regPhoneno, regPassword;
@@ -35,7 +35,7 @@ public class RegisterUserActivity extends AppCompatActivity {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegisterUserActivity.this, MainActivity.class);
+                Intent intent = new Intent(ShopkeeperRegisterationActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -54,7 +54,7 @@ public class RegisterUserActivity extends AppCompatActivity {
         });
     }
 
-    private void registerUser() {
+    private void registerUser(){
 
         String name = regName.getEditText().getText().toString();
         String email = regEmail.getEditText().getText().toString();
@@ -62,22 +62,24 @@ public class RegisterUserActivity extends AppCompatActivity {
         String password = regPassword.getEditText().getText().toString();
 
         rootnode = FirebaseDatabase.getInstance();
-        reference = rootnode.getReference("users");
+        reference = rootnode.getReference("shopkeeper");
 
         if (!validateName() | !validatePassword() | !validatePhoneNo() | !validateEmail()) {
             return;
-        } else {
+        } else{
+            // Implement Firebase registration logic
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
+                                // Registration success
                                 saveUserData(name, email, phone, password);
-                                Toast.makeText(RegisterUserActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(RegisterUserActivity.this, MainActivity.class));
+                                Toast.makeText(ShopkeeperRegisterationActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(ShopkeeperRegisterationActivity.this, MainActivity.class));
                                 finish();
                             } else {
-                                Toast.makeText(RegisterUserActivity.this, "Registration failed. Please try again.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ShopkeeperRegisterationActivity.this, "Registration failed. Please try again.", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -105,12 +107,12 @@ public class RegisterUserActivity extends AppCompatActivity {
 
     private Boolean validateEmail() {
         String val = regEmail.getEditText().getText().toString();
-        String emailPattern = "^[a-zA-Z]+\\.(\\d+)@srec\\.ac\\.in$";
+        String emailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\n";
         if (val.isEmpty()) {
             regEmail.setError("Field cannot be empty");
             return false;
         } else if (!val.matches(emailPattern)) {
-            regEmail.setError("Invalid Roll number");
+            regEmail.setError("Invalid email address");
             return false;
         } else {
             regEmail.setError(null);
@@ -121,12 +123,8 @@ public class RegisterUserActivity extends AppCompatActivity {
 
     private Boolean validatePhoneNo() {
         String val = regPhoneno.getEditText().getText().toString();
-        String emailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\n";
         if (val.isEmpty()) {
             regPhoneno.setError("Field cannot be empty");
-            return false;
-        } else if (!val.matches(emailPattern)) {
-            regPhoneno.setError("Invalid email address");
             return false;
         } else {
             regPhoneno.setError(null);
