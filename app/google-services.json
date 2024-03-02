@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "108812251283",
+    "firebase_url": "https://srec-59b59-default-rtdb.firebaseio.com",
+    "project_id": "srec-59b59",
+    "storage_bucket": "srec-59b59.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:108812251283:android:9fffdc696b577a8cf95d66",
+        "android_client_info": {
+          "package_name": "com.example.srec"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDecEvTujtRuMIuhrf_wovABiXLidbGSzE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
