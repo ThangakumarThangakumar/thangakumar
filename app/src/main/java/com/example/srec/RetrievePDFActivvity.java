@@ -82,13 +82,13 @@ public class RetrievePDFActivvity extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull FileinModel model) {
 
                 progressBar.setVisibility(View.GONE);
-                holder.pdfTitle.setText(model.getFilename());
+                holder.pdfTitle.setText(model.getFileName());
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(Intent.ACTION_VIEW);
                         intent.setType("application/pdf");
-                        intent.setData(Uri.parse(model.getFileurl()));
+                        intent.setData(Uri.parse(model.getFileUrl()));
                         startActivity(intent);
                     }
                 });

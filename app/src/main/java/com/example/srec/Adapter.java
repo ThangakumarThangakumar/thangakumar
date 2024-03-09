@@ -28,7 +28,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         FileinModel file = fileList.get(position);
-        holder.pdfTitle.setText(file.getFilename());
+        holder.pdfTitle.setText(file.getFileName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
