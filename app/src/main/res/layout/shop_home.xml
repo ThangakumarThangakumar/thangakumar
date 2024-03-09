@@ -5,22 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ShopHomeActivity">
+
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/btnRead"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btn"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginTop="40dp"
-        android:text="@string/retrieve_files"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/button_click_ripple"
         android:fontFamily="@font/poppins_medium"
-        android:textSize="19sp"
         android:includeFontPadding="false"
         android:letterSpacing="0.06"
-        android:textAllCaps="false"
-        android:id="@+id/btnRead"
         android:onClick="retrievePDFs"
-        android:background="@drawable/button_click_ripple"
-        android:textColor="@color/white"/>
+        android:text="@string/retrieve_files"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

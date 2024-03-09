@@ -121,12 +121,20 @@ public class RegisterUserActivity extends AppCompatActivity {
 
     private Boolean validatePhoneNo() {
         String val = regPhoneno.getEditText().getText().toString();
-        String emailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\n";
+        String passwordVal = "^" +
+                //"(?=.*[0-9])" +         //at least 1 digit
+                //"(?=.*[a-z])" +         //at least 1 lower case letter
+                //"(?=.*[A-Z])" +         //at least 1 upper case letter
+                //"(?=.*[a-zA-Z])" +      //any letter
+                //"(?=.*[@#$%^&+=])" +    //at least 1 special character
+                "(?=\\S+$)" +           //no white spaces
+                ".{4,}" +               //at least 4 characters
+                "$";
         if (val.isEmpty()) {
             regPhoneno.setError("Field cannot be empty");
             return false;
-        } else if (!val.matches(emailPattern)) {
-            regPhoneno.setError("Invalid email address");
+        } else if (!val.matches(passwordVal)) {
+            regPhoneno.setError("Password is too weak");
             return false;
         } else {
             regPhoneno.setError(null);
