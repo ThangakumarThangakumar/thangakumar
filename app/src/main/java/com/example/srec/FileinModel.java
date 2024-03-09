@@ -3,75 +3,120 @@ package com.example.srec;
 public class FileinModel {
     private String fileName;
     private String fileUrl;
-    private boolean isBlackAndWhiteChecked;
-    private boolean isColorChecked;
-    private boolean isSpiralChecked;
-    private boolean isCaligoChecked;
+    private boolean blackAndWhiteChecked;
+    private boolean colorChecked;
+    private boolean spiralChecked;
+    private boolean caligoChecked;
     private int copiesBlackAndWhite;
     private int copiesColor;
     private int totalCost;
-    private String userName;
     private String userEmail;
+    private String userName;
 
+    // Add constructor, getters, and setters
     public FileinModel() {
-        // Default constructor required for calls to DataSnapshot.getValue(FileUploadModel.class)
     }
 
-    public FileinModel(String fileName, String fileUrl, boolean isBlackAndWhiteChecked, boolean isColorChecked, boolean isSpiralChecked, boolean isCaligoChecked, int copiesBlackAndWhite, int copiesColor, int totalCost, String userName, String userEmail) {
+    public FileinModel(String fileName, String fileUrl, boolean blackAndWhiteChecked, boolean colorChecked, boolean spiralChecked, boolean caligoChecked, int copiesBlackAndWhite, int copiesColor, int totalCost, String userEmail, String userName) {
         this.fileName = fileName;
         this.fileUrl = fileUrl;
-        this.isBlackAndWhiteChecked = isBlackAndWhiteChecked;
-        this.isColorChecked = isColorChecked;
-        this.isSpiralChecked = isSpiralChecked;
-        this.isCaligoChecked = isCaligoChecked;
+        this.blackAndWhiteChecked = blackAndWhiteChecked;
+        this.colorChecked = colorChecked;
+        this.spiralChecked = spiralChecked;
+        this.caligoChecked = caligoChecked;
         this.copiesBlackAndWhite = copiesBlackAndWhite;
         this.copiesColor = copiesColor;
         this.totalCost = totalCost;
-        this.userName = userName;
         this.userEmail = userEmail;
+        this.userName = userName;
     }
 
+    // Getters and setters
     public String getFileName() {
         return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     public String getFileUrl() {
         return fileUrl;
     }
 
+    public void setFileUrl(String fileUrl) {
+        this.fileUrl = fileUrl;
+    }
+
     public boolean isBlackAndWhiteChecked() {
-        return isBlackAndWhiteChecked;
+        return blackAndWhiteChecked;
+    }
+
+    public void setBlackAndWhiteChecked(boolean blackAndWhiteChecked) {
+        this.blackAndWhiteChecked = blackAndWhiteChecked;
     }
 
     public boolean isColorChecked() {
-        return isColorChecked;
+        return colorChecked;
+    }
+
+    public void setColorChecked(boolean colorChecked) {
+        this.colorChecked = colorChecked;
     }
 
     public boolean isSpiralChecked() {
-        return isSpiralChecked;
+        return spiralChecked;
+    }
+
+    public void setSpiralChecked(boolean spiralChecked) {
+        this.spiralChecked = spiralChecked;
     }
 
     public boolean isCaligoChecked() {
-        return isCaligoChecked;
+        return caligoChecked;
+    }
+
+    public void setCaligoChecked(boolean caligoChecked) {
+        this.caligoChecked = caligoChecked;
     }
 
     public int getCopiesBlackAndWhite() {
         return copiesBlackAndWhite;
     }
 
+    public void setCopiesBlackAndWhite(int copiesBlackAndWhite) {
+        this.copiesBlackAndWhite = copiesBlackAndWhite;
+    }
+
     public int getCopiesColor() {
         return copiesColor;
+    }
+
+    public void setCopiesColor(int copiesColor) {
+        this.copiesColor = copiesColor;
     }
 
     public int getTotalCost() {
         return totalCost;
     }
 
-    public String getUserName() {
-        return userName;
+    public void setTotalCost(int totalCost) {
+        this.totalCost = totalCost;
     }
 
     public String getUserEmail() {
         return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

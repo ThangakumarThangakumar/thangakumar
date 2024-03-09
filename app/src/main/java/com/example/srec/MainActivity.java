@@ -127,6 +127,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void uploadPDF(Uri data) {
+        String fileName = edit.getText().toString().trim();
+        if (fileName.isEmpty()) {
+            Toast.makeText(this, "Please select a PDF file", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (!checkboxBlackAndWhite.isChecked() && !checkboxColor.isChecked() && !checkboxSpiral.isChecked() && !checkboxCaligo.isChecked()) {
+            Toast.makeText(this, "Please select at least one checkbox", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (checkboxBlackAndWhite.isChecked() && edtCopiesBlackAndWhite.getText().toString().trim().isEmpty()) {
+            Toast.makeText(this, "Please enter the number of copies for Black and White", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (checkboxColor.isChecked() && edtCopiesColor.getText().toString().trim().isEmpty()) {
+            Toast.makeText(this, "Please enter the number of copies for Color", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         final ProgressDialog pd = new ProgressDialog(this);
         pd.setTitle("File Uploading..");
         pd.show();
@@ -155,10 +176,10 @@ public class MainActivity extends AppCompatActivity {
                         Uri uri = uriTask.getResult();
 
                         // Get the number of copies from EditText fields
-                        int copiesBlackAndWhite = Integer.parseInt(edtCopiesBlackAndWhite.getText().toString().trim());
-                        int copiesColor = Integer.parseInt(edtCopiesColor.getText().toString().trim());
+                        int copiesBlackAndWhite = checkboxBlackAndWhite.isChecked() ? Integer.parseInt(edtCopiesBlackAndWhite.getText().toString().trim()) : 0;
+                        int copiesColor = checkboxColor.isChecked() ? Integer.parseInt(edtCopiesColor.getText().toString().trim()) : 0;
 
-                        FileinModel fileinModel = new FileinModel(edit.getText().toString(), uri.toString(),
+                        FileinModel fileinModel = new FileinModel(fileName, uri.toString(),
                                 checkboxBlackAndWhite.isChecked(), checkboxColor.isChecked(),
                                 checkboxSpiral.isChecked(), checkboxCaligo.isChecked(),
                                 copiesBlackAndWhite, copiesColor, totalCost, userName, userEmail);

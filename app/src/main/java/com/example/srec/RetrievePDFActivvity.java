@@ -49,8 +49,7 @@ public class RetrievePDFActivvity extends AppCompatActivity {
         progressBar = findViewById(R.id.progress_bar);
         progressBar.setVisibility(View.VISIBLE);
 
-        query = pRef.orderByChild("filename");
-        //we will request the files with the filename, if filename exists then it will show in the recyclerView
+        query = pRef.orderByChild("fileName");
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -62,14 +61,12 @@ public class RetrievePDFActivvity extends AppCompatActivity {
                     Toast.makeText(RetrievePDFActivvity.this, "No PDFs found", Toast.LENGTH_SHORT).show();
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 progressBar.setVisibility(View.GONE);
                 Toast.makeText(RetrievePDFActivvity.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     private void showPdf() {
@@ -93,6 +90,16 @@ public class RetrievePDFActivvity extends AppCompatActivity {
                     }
                 });
 
+                // Set other text views
+                holder.blackAndWhiteChecked.setText("Black and White: " + model.isBlackAndWhiteChecked());
+                holder.caligoChecked.setText("Caligo Checked: " + model.isCaligoChecked());
+                holder.colorChecked.setText("Color Checked: " + model.isColorChecked());
+                holder.copiesBlackAndWhite.setText("Copies Black and White: " + model.getCopiesBlackAndWhite());
+                holder.copiesColor.setText("Copies Color: " + model.getCopiesColor());
+                holder.spiralChecked.setText("Spiral Checked: " + model.isSpiralChecked());
+                holder.totalCost.setText("Total Cost: " + model.getTotalCost());
+                holder.userEmail.setText("User Email: " + model.getUserEmail());
+                holder.userName.setText("User Name: " + model.getUserName());
             }
 
             @NonNull
@@ -109,10 +116,28 @@ public class RetrievePDFActivvity extends AppCompatActivity {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView pdfTitle;
+        TextView blackAndWhiteChecked;
+        TextView caligoChecked;
+        TextView colorChecked;
+        TextView copiesBlackAndWhite;
+        TextView copiesColor;
+        TextView spiralChecked;
+        TextView totalCost;
+        TextView userEmail;
+        TextView userName;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             pdfTitle = itemView.findViewById(R.id.pdf_name);
+            blackAndWhiteChecked = itemView.findViewById(R.id.black_and_white_checked);
+            caligoChecked = itemView.findViewById(R.id.caligo_checked);
+            colorChecked = itemView.findViewById(R.id.color_checked);
+            copiesBlackAndWhite = itemView.findViewById(R.id.copies_black_and_white);
+            copiesColor = itemView.findViewById(R.id.copies_color);
+            spiralChecked = itemView.findViewById(R.id.spiral_checked);
+            totalCost = itemView.findViewById(R.id.total_cost);
+            userEmail = itemView.findViewById(R.id.user_email);
+            userName = itemView.findViewById(R.id.user_name);
         }
     }
 

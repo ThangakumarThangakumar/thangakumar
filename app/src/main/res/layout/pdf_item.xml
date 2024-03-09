@@ -1,228 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="6dp"
-    app:cardUseCompatPadding="true"
     android:background="@color/white"
-    android:elevation="6dp">
+    android:elevation="6dp"
+    app:cardCornerRadius="6dp"
+    app:cardUseCompatPadding="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
-        android:background="@color/white"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/pdf"
-                android:padding="4dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="6dp"
-                android:id="@+id/img"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/pdf_name"
-                android:layout_toEndOf="@id/img"
-                android:layout_centerVertical="true"
-                android:text="@string/pdf_file_name"
-                android:fontFamily="@font/poppins_regular"
-                android:letterSpacing="0.02"
-                android:includeFontPadding="false"
-                android:textColor="@color/black"
-                android:textSize="17sp"
-                android:layout_marginStart="8dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="6dp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/pdf_name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:padding="8dp"
+            android:text="file_name"
+            android:textSize="18sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Black and white"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
-
-
-            <TextView
-                android:id="@+id/nameText"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="name"
-                android:layout_marginStart="64dp"
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/user_email"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:padding="8dp"
+            android:text="user_email"
+            android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Number of copies"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
-
-            <TextView
-                android:layout_marginStart="50dp"
-                android:id="@+id/leaveReason"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:text="reason"
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:padding="8dp"
+            android:text="user_name"
+            android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Colour"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
-
-            <TextView
-                android:layout_marginStart="115dp"
-                android:id="@+id/leaveType"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:text="type"
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/black_and_white_checked"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:padding="8dp"
+            android:text="black_and_white_checked"
+            android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Number ofcolour Copies"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
-
-            <TextView
-                android:layout_marginStart="25dp"
-                android:id="@+id/startDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:text="start date"
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/caligo_checked"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:padding="8dp"
+            android:text="caligo_checked"
+            android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="spiral"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
-
-            <TextView
-                android:layout_marginStart="115dp"
-                android:id="@+id/endDate2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:text="end date"
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/color_checked"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:padding="8dp"
+            android:text="color_checked"
+            android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Caligo Binding"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
-
-            <TextView
-                android:layout_marginStart="70dp"
-                android:id="@+id/endDate3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:text="end date"
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/copies_black_and_white"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:padding="8dp"
+            android:text="copies_black_and_white"
+            android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Total Cost"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/copies_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="copies_color"
+            android:textSize="16sp" />
 
-            <TextView
-                android:layout_marginStart="100dp"
-                android:id="@+id/endDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:text="end date"
-                android:textColor="@color/black"
-                android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/file_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="file_url"
+            android:textSize="16sp" />
 
-        </LinearLayout>
+        <TextView
+            android:id="@+id/spiral_checked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="spiral_checked"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/total_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="total_cost"
+            android:textSize="16sp" />
+
 
     </LinearLayout>
 

@@ -44,16 +44,26 @@ public class UserLogin extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     ProgressBar progressBar;
 
+    Button adminonto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_login);
 
+        adminonto=findViewById(R.id.adminonto);
         already=findViewById(R.id.already);
         already.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(UserLogin.this,RegisterUserActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        adminonto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(UserLogin.this, RetrievePDFActivvity.class);
                 startActivity(intent);
             }
         });
